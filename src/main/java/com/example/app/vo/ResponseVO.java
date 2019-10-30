@@ -1,5 +1,5 @@
     
-package com.example.app.VO;
+package com.example.app.vo;
 
 import lombok.Data;
 

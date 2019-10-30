@@ -1,4 +1,4 @@
-package com.example.app.VO;
+package com.example.app.vo;
 
 import lombok.Data;
 import org.json.simple.JSONObject;
@@ -12,7 +12,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-// VO for setting Profile
+// vo for setting Profile
 @Data
 public class ProfileVO {
     private String name;
