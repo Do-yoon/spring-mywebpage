@@ -1,5 +1,6 @@
 package com.example.app.controller;
 
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,27 +15,26 @@ public class ApiController {
 
     // Log log = new Log();
 
-    @GetMapping("/{category}")
-    public String profile(@PathVariable String category) {
+    @GetMapping("/profile")
+    public String profile(HttpRequest req) {
         FileReader fr;
         try {
-            fr = new FileReader("data/" + category + ".json");
+            fr = new FileReader("data/profile.json");
             return fr.toString();
         } catch (FileNotFoundException e) { e.printStackTrace(); }
         return "error";
     }
 
-    /*
     @GetMapping("/project/{id}")
     public String project(@PathVariable int id) {
-
+        return "project/"+ id;
     }
 
     @GetMapping("/career/{id}")
     public String career(@PathVariable int id) {
-
+        return "career/" + id;
     }
-
+/*
     private String getJsonData(String uri){
         ClassPathResource resource = new ClassPathResource("data/" + uri + ".json");
         ResponseVO<List<ProfileVO>> resp = new ResponseVO<>();
