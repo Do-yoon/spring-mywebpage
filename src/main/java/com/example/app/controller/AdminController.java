@@ -14,12 +14,13 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.InputStream;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/admin")
 public class AdminController {
     //String res = ""; // mybatis configuration file path
-    private static final Log log = new Log();
+    private static final Logger logger = Logger.getGlobal();
 
     //@Inject
     MemberService memberService;
