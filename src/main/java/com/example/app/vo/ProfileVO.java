@@ -1,6 +1,7 @@
 package com.example.app.vo;
 
 import lombok.Data;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -17,15 +18,19 @@ import java.io.IOException;
 public class ProfileVO {
     private String name;
     private BufferedImage image;
-    private String introduce;
+    private String intro;
 
     public ProfileVO() {
         try {
             FileReader fr = new FileReader("data/profile.json");
+            JSONParser jsonParser = new JSONParser();
+            JSONObject profile = (JSONObject) jsonParser.parse(fr.toString());
+            this.name = (String) profile.get("name");
+            //this.image = new BufferedImage((String)profile.get("image"));
+            this.intro = (String) profile.get("intro");
 
-        } catch (FileNotFoundException e){
-            e.printStackTrace();
         }
+        catch (FileNotFoundException|ParseException e){ e.printStackTrace(); }
 
         /*
         JSONParser parser = new JSONParser();

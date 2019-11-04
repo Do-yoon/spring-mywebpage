@@ -1,4 +1,4 @@
-package com.example.app.controller;
+package com.example.app.controller.service;
 
 import com.example.app.dao.AdminDAO;
 import com.example.app.vo.AdminVO;
@@ -8,12 +8,11 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 @Service
-public class MemberServiceImpl implements MemberService {
+public class MemberService {
 
-    //@Inject
-    AdminDAO adminDAO;
+    // @Inject
+    private AdminDAO adminDAO;
 
-    @Override
     public boolean loginCheck(AdminVO admin, HttpSession session){
         boolean result = adminDAO.loginCheck(admin);
         if(result) {
@@ -23,12 +22,10 @@ public class MemberServiceImpl implements MemberService {
         return result;
     }
 
-    @Override
     public AdminVO viewAdmin(AdminVO admin){
         return adminDAO.viewAdmin(admin);
     }
 
-    @Override
     public void logout(HttpSession session){
         session.invalidate();
     }
