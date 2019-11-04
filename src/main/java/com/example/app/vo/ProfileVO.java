@@ -22,10 +22,11 @@ public class ProfileVO {
     public ProfileVO() {
         try {
             FileReader fr = new FileReader("data/profile.json");
-
-        } catch (FileNotFoundException e){
-            e.printStackTrace();
+            JSONParser jsonParser = new JSONParser();
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(fr.toString());
         }
+        catch (FileNotFoundException e){ e.printStackTrace(); }
+        catch (ParseException e){ e.printStackTrace(); }
 
         /*
         JSONParser parser = new JSONParser();
