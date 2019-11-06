@@ -23,7 +23,7 @@ public class UserController {
         list.add(new UserVO("테스터", "010-4444-2222"));
         list.add(new UserVO("LSH", "010-9999-1111"));
 
-        resp.setResponse(list);
+        //resp.setResponse(list);
         return resp;
     }
 
@@ -36,7 +36,7 @@ public class UserController {
         list.add(new UserVO("테스터", "010-4444-2222"));
         list.add(new UserVO("LSH", "010-9999-1111"));
 
-        resp.setResponse(list.get(id));
+        //resp.setResponse(list.get(id));
         return resp;
     }
 
