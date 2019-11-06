@@ -17,13 +17,15 @@ public class AdminMenuController {
 
     private static final Logger logger = Logger.getGlobal();
 
+    // to do: AdminMenuService 만들고, mapper에서 DB Update query문을 수행한다.
+
     @RequestMapping(value = "/profile", method = RequestMethod.PUT)
-    public ResponseEntity<ProfileVO> profile(@PathVariable String menu, HttpSession session){
+    public ResponseEntity<?> profile(@PathVariable String menu, HttpSession session){
         ProfileVO profileVO = new ProfileVO();
         if (profileVO == null){
-            return new ResponseEntity<ProfileVO>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<ProfileVO>(profileVO, HttpStatus.OK);
+        return new ResponseEntity<>(profileVO, HttpStatus.OK);
     }
 
     @GetMapping("/{menu}")
