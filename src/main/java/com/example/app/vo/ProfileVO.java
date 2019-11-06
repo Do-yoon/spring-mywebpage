@@ -17,7 +17,8 @@ import java.io.IOException;
 @Data
 public class ProfileVO {
     private String name;
-    private BufferedImage image;
+    // private BufferedImage image;
+    // http://도메인/api/images/1 과 같은 형식으로 요청
     private String intro;
 
     public ProfileVO() {

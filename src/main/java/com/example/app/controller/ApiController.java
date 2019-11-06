@@ -7,14 +7,16 @@ import com.example.app.vo.ProjectVO;
 import com.example.app.vo.TriviaVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.*;
+import org.apache.commons.io.IOUtils;
+import sun.nio.cs.UTF_8;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -29,14 +31,32 @@ public class ApiController {
 
     @GetMapping("/profile")
     public ProfileVO profile() {
-        ProfileVO profile = new ProfileVO();
-        return profile;
+        ProfileVO profileVO = new ProfileVO();
+        return profileVO;
+    }
+
+    @GetMapping("/profile/{id}")
+    public @ResponseBody String profile(@PathVariable String id) throws IOException {
+        InputStream in = getClass().getResourceAsStream("../data/profile/" + id + ".txt");
+        return IOUtils.toString(in, "UTF-8");
     }
 
     @GetMapping("/trivia")
-    public TriviaVO trivia() {
-        TriviaVO trivia = new TriviaVO();
-        return trivia;
+    public TriviaVO trivia() throws IOException {
+        TriviaVO triviaVO = new TriviaVO();
+        return triviaVO;
+    }
+
+    @GetMapping("/trivia/{id}")
+    public @ResponseBody String trivia(@PathVariable String id) throws IOException {
+        InputStream in = getClass().getResourceAsStream("../data/trivia/" + id + ".txt");
+        return IOUtils.toString(in, "UTF-8");
+    }
+
+    @GetMapping(value = "/image/{id}", produces = MediaType.IMAGE_JPEG_VALUE)
+    public @ResponseBody byte[] image(@PathVariable String id) throws IOException {
+        InputStream in = getClass().getResourceAsStream("../resources/data/image/" + id + ".jpg");
+        return IOUtils.toByteArray(in);
     }
 
     @GetMapping("/project")
@@ -52,6 +72,8 @@ public class ApiController {
             return apiService.selectCareer(Integer.parseInt(id));
         return apiService.selectCareerList();
     }
+
+
 /*
     private String getJsonData(String uri){
         ClassPathResource resource = new ClassPathResource("data/" + uri + ".json");
