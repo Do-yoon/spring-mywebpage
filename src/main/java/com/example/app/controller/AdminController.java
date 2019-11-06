@@ -4,6 +4,7 @@ import com.example.app.controller.service.MemberService;
 import com.example.app.vo.AdminVO;
 import com.example.app.vo.ProfileVO;
 import com.example.app.vo.TriviaVO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,7 +17,7 @@ public class AdminController {
     //String res = ""; // mybatis configuration file path
     private static final Logger logger = Logger.getGlobal();
 
-    //@Inject
+    @Autowired
     private MemberService memberService;
 
     @RequestMapping("")
@@ -46,21 +47,5 @@ public class AdminController {
         return mav;
     }
 
-    @RequestMapping(value = "/category/{menu}", method = RequestMethod.PUT)
-    public ModelAndView profile(@PathVariable String menu, HttpSession session){
-        ModelAndView mv = new ModelAndView("/admin/" + menu);
-        switch (menu){
-            case "profile":
-                mv.addObject("list", new ProfileVO());
-                break;
-            case "trivia":
-                mv.addObject("list", new TriviaVO());
-                break;
-            case "project":
-            case "career":
 
-                break;
-        }
-        return mv;
-    }
 }
