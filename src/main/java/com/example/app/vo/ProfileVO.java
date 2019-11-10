@@ -16,23 +16,41 @@ import java.io.IOException;
 // vo for setting Profile
 @Data
 public class ProfileVO {
+
     private String name;
     // private BufferedImage image;
     // http://도메인/api/images/1 과 같은 형식으로 요청
     private String intro;
 
-    public ProfileVO() {
-        try {
-            FileReader fr = new FileReader("data/profile.json");
-            JSONParser jsonParser = new JSONParser();
-            JSONObject profile = (JSONObject) jsonParser.parse(fr.toString());
-            this.name = (String) profile.get("name");
-            //this.image = new BufferedImage((String)profile.get("image"));
-            this.intro = (String) profile.get("intro");
 
-        }
-        catch (FileNotFoundException|ParseException e){ e.printStackTrace(); }
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getIntro() {
+        return intro;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+//    public ProfileVO() {
+//        try {
+//            FileReader fr = new FileReader("data/profile.json");
+//            JSONParser jsonParser = new JSONParser();
+//            JSONObject profile = (JSONObject) jsonParser.parse(fr.toString());
+//            this.name = (String) profile.get("name");
+//            //this.image = new BufferedImage((String)profile.get("image"));
+//            this.intro = (String) profile.get("intro");
+//
+//        }
+//        catch (FileNotFoundException|ParseException e){ e.printStackTrace(); }
+//    }
         /*
         JSONParser parser = new JSONParser();
 
@@ -44,5 +62,4 @@ public class ProfileVO {
         catch (IOException e) { e.printStackTrace(); }
         catch (ParseException e) { e.printStackTrace(); }
         */
-    }
 }

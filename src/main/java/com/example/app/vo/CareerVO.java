@@ -4,18 +4,18 @@ import java.util.Date;
 
 public class CareerVO {
 
-    private int number;
+    private Integer id;
     private String company;
     private Date date1;
     private Date date2;
     private String intro;
 
-    public int getNumber() {
-        return number;
+    public Integer getId() {
+        return id;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setId(int number) {
+        this.id = number;
     }
 
     public String getCompany() {

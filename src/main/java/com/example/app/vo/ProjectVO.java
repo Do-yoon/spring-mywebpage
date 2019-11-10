@@ -4,18 +4,18 @@ import java.util.Date;
 
 public class ProjectVO {
 
-    private int number;
+    private Integer id;
     private String name;
     private Date date1;
     private Date date2;
     private String intro;
 
-    public int getNumber() {
-        return number;
+    public int getId() {
+        return id;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setId(Integer number) {
+        this.id = number;
     }
 
     public String getName() {
