@@ -13,4 +13,6 @@ public interface AdminMenuMapper {
     public void updateCareer(CareerVO careerVO);
     public void deleteProject(Integer id);
     public void deleteCareer(Integer id);
+    public void insertProject(ProjectVO projectVO);
+    public void insertCareer(CareerVO careerVO);
 }

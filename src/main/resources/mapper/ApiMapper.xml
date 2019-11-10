@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.app.controller.mapper.ApiMapper">
+    <resultMap id="CareerMap" type="com.example.app.vo.CareerVO">
+        <result column="id" property="id"></result>
+        <result column="company" property="company"></result>
+        <result column="term_start" property="date1"></result>
+        <result column="term_end" property="date2"></result>
+        <result column="introduction" property="intro"></result>
+    </resultMap>
+    <resultMap id="ProjectMap" type="com.example.app.vo.ProjectVO">
+        <result column="id" property="id"></result>
+        <result column="name" property="name"></result>
+        <result column="term_start" property="date1"></result>
+        <result column="term_end" property="date2"></result>
+        <result column="introduction" property="intro"></result>
+    </resultMap>
+    <select id="selectCareerList" resultType="com.example.app.vo.CareerVO">
+        SELECT *
+        FROM career
+        ORDER BY id DESC
+    </select>
+    <!-- to do: 접었다 폈다 할 수 있도록 처음부터 전부 선택하게 하지 말 것 -->
+    <select id="selectCareer" resultType="com.example.app.vo.CareerVO">
+        SELECT *
+        FROM career
+        WHERE 1 == 1
+        <if test='number != null'>
+          AND 'number' = #{number}
+        </if>
+    </select>
+    <select id="selectProjectList" resultType="com.example.app.vo.ProjectVO">
+        SELECT *
+        FROM project
+        ORDER BY id DESC
+    </select>
+    <select id="selectProject" resultType="com.example.app.vo.ProjectVO">
+        SELECT *
+        FROM 'career'
+        WHERE 1 == 1
+        <if test='number != null'>
+            AND 'number' = #{number}
+        </if>
+    </select>
+</mapper>
