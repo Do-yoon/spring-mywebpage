@@ -1,20 +1,19 @@
 package com.example.app.controller.service;
 
-import com.example.app.dao.AdminDAO;
+import com.example.app.controller.mapper.AdminLoginMapper;
 import com.example.app.vo.AdminVO;
 import org.springframework.stereotype.Service;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 @Service
-public class MemberService {
+public class AdminLoginService {
 
     // @Inject
-    private AdminDAO adminDAO;
+    private AdminLoginMapper adminLoginMapper;
 
     public boolean loginCheck(AdminVO admin, HttpSession session){
-        boolean result = adminDAO.loginCheck(admin);
+        boolean result = adminLoginMapper.loginCheck(admin);
         if(result) {
             AdminVO admin2 = viewAdmin(admin);
             session.setAttribute("userId", admin2.getId());
@@ -23,7 +22,7 @@ public class MemberService {
     }
 
     public AdminVO viewAdmin(AdminVO admin){
-        return adminDAO.viewAdmin(admin);
+        return adminLoginMapper.viewAdmin(admin);
     }
 
     public void logout(HttpSession session){
