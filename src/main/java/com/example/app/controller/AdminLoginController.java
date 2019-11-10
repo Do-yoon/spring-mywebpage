@@ -1,9 +1,7 @@
 package com.example.app.controller;
 
-import com.example.app.controller.service.MemberService;
+import com.example.app.controller.service.AdminLoginService;
 import com.example.app.vo.AdminVO;
-import com.example.app.vo.ProfileVO;
-import com.example.app.vo.TriviaVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -13,12 +11,12 @@ import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/admin")
-public class AdminController {
+public class AdminLoginController {
     //String res = ""; // mybatis configuration file path
     private static final Logger logger = Logger.getGlobal();
 
     @Autowired
-    private MemberService memberService;
+    private AdminLoginService memberService;
 
     @RequestMapping("")
     public String login(){
