@@ -2,6 +2,7 @@ package com.example.app.controller.service;
 
 import com.example.app.controller.mapper.AdminLoginMapper;
 import com.example.app.vo.AdminVO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
@@ -9,14 +10,14 @@ import javax.servlet.http.HttpSession;
 @Service
 public class AdminLoginService {
 
-    // @Inject
+    @Autowired
     private AdminLoginMapper adminLoginMapper;
 
     public boolean loginCheck(AdminVO admin, HttpSession session){
-        boolean result = adminLoginMapper.loginCheck(admin);
+        boolean result = adminLoginMapper.loginCheck(admin); // login logic needed
         if(result) {
             AdminVO admin2 = viewAdmin(admin);
-            session.setAttribute("userId", admin2.getId());
+            session.setAttribute("id", admin2.getId());
         }
         return result;
     }
