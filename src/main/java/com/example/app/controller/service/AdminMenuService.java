@@ -1,6 +1,6 @@
-package com.example.app.service;
+package com.example.app.controller.service;
 
-import com.example.app.mapper.AdminMenuMapper;
+import com.example.app.controller.mapper.AdminMenuMapper;
 import com.example.app.vo.CareerVO;
 import com.example.app.vo.ProfileVO;
 import com.example.app.vo.ProjectVO;

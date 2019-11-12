@@ -1,6 +1,6 @@
 package com.example.app.controller;
 
-import com.example.app.service.AdminLoginService;
+import com.example.app.controller.service.AdminLoginService;
 import com.example.app.vo.AdminVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

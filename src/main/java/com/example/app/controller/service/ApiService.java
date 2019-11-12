@@ -1,8 +1,10 @@
-package com.example.app.service;
+package com.example.app.controller.service;
 
-import com.example.app.mapper.ApiMapper;
+import com.example.app.controller.mapper.ApiMapper;
 import com.example.app.vo.CareerVO;
+import com.example.app.vo.ProfileVO;
 import com.example.app.vo.ProjectVO;
+import com.example.app.vo.TriviaVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
