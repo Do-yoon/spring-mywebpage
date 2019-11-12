@@ -1,4 +1,4 @@
-package com.example.app.controller.mapper;
+package com.example.app.mapper;
 
 import com.example.app.vo.AdminVO;
 

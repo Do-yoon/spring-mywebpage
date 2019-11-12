@@ -19,11 +19,11 @@ public class AdminVO {
         return lastLoginDate;
     }
 
-    public void setId() {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public void setPw() {
+    public void setPw(String pw) {
         this.pw = pw;
     }
 
