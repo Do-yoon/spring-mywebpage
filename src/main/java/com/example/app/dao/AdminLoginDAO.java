@@ -4,7 +4,7 @@ import com.example.app.vo.AdminVO;
 
 import java.io.*;
 
-public class AdminLoginDao {
+public class AdminLoginDAO {
     public boolean loginCheck(AdminVO admin){
         // to do: account encryption
         BufferedReader bufferedReader;

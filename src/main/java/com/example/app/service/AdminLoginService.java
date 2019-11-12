@@ -1,6 +1,6 @@
 package com.example.app.service;
 
-import com.example.app.dao.AdminLoginDao;
+import com.example.app.dao.AdminLoginDAO;
 import com.example.app.vo.AdminVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 public class AdminLoginService {
 
     @Autowired
-    private AdminLoginDao adminLoginDao;
+    private AdminLoginDAO adminLoginDao;
 
     public boolean loginCheck(AdminVO admin, HttpSession session){
         boolean result = adminLoginDao.loginCheck(admin); // login logic needed

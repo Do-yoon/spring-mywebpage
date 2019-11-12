@@ -16,7 +16,7 @@ public class AdminLoginController {
     private static final Logger logger = Logger.getGlobal();
 
     @Autowired
-    private AdminLoginService memberService;
+    private AdminLoginService adminLoginService;
 
     @RequestMapping("")
     public String login(){
@@ -25,7 +25,7 @@ public class AdminLoginController {
 
     @RequestMapping("/loginCheck.do")
     public ModelAndView loginCheck(@ModelAttribute AdminVO admin, HttpSession session){
-        boolean result = memberService.loginCheck(admin, session);
+        boolean result = adminLoginService.loginCheck(admin, session);
         ModelAndView mav = new ModelAndView();
         if (result) {
             mav.setViewName("profile");
@@ -39,7 +39,7 @@ public class AdminLoginController {
 
     @RequestMapping("/logout.do")
     public ModelAndView logout(HttpSession session){
-        memberService.logout(session);
+        adminLoginService.logout(session);
         ModelAndView mav = new ModelAndView();
         mav.setViewName("admin/login");
         return mav;

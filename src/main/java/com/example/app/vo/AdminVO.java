@@ -5,7 +5,7 @@ import java.util.Date;
 public class AdminVO {
     private String id;
     private String pw;
-    private Date lastLoginDate;
+    private String lastLoginDate;
 
     public String getId() {
         return id;
@@ -15,7 +15,7 @@ public class AdminVO {
         return pw;
     }
 
-    public Date getLastLoginDate() {
+    public String getLastLoginDate() {
         return lastLoginDate;
     }
 
@@ -27,7 +27,7 @@ public class AdminVO {
         this.pw = pw;
     }
 
-    public void setLastLoginDate(Date now) {
+    public void setLastLoginDate(String now) {
         this.lastLoginDate = now;
     }
 }
