@@ -15,8 +15,8 @@
     <script>
         $(document).ready(function(){
             $("#btnLogin").click(function () {
-                var userId = $("#userId").val();
-                var userPw = $("#userPw").val();
+                var userId = $("#id").val();
+                var userPw = $("#pw").val();
                 if(userId == ""){
                     alert("아이디를 입력하세요.")
                     $("#id").focus();
@@ -36,11 +36,11 @@
     <table border="1" width="400px">
         <tr>
             <td>ID</td>
-            <td><input name="userId" id="userId"></td>
+            <td><input name="id" id="id"></td>
         </tr>
         <tr>
             <td>PASSWORD</td>
-            <td><input type="password" name="userPw" id="userPw"></td>
+            <td><input type="password" name="pw" id="pw"></td>
         </tr>
         <tr>
             <td colspan="2" align="center">

@@ -1,20 +1,15 @@
 package com.example.app.controller;
 
-import com.example.app.controller.service.AdminMenuService;
+import com.example.app.service.AdminMenuService;
 import com.example.app.vo.CareerVO;
 import com.example.app.vo.ProfileVO;
 import com.example.app.vo.ProjectVO;
 import com.example.app.vo.TriviaVO;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpSession;
-import java.util.Map;
 import java.util.logging.Logger;
 
 @Controller
