@@ -39,18 +39,18 @@ public class ProfileVO {
         this.intro = intro;
     }
 
-//    public ProfileVO() {
-//        try {
-//            FileReader fr = new FileReader("data/profile.json");
-//            JSONParser jsonParser = new JSONParser();
-//            JSONObject profile = (JSONObject) jsonParser.parse(fr.toString());
-//            this.name = (String) profile.get("name");
-//            //this.image = new BufferedImage((String)profile.get("image"));
-//            this.intro = (String) profile.get("intro");
-//
-//        }
-//        catch (FileNotFoundException|ParseException e){ e.printStackTrace(); }
-//    }
+    public ProfileVO() {
+        try {
+            FileReader fr = new FileReader("data/profile.json");
+            JSONParser jsonParser = new JSONParser();
+            JSONObject profile = (JSONObject) jsonParser.parse(fr.toString());
+            this.name = (String) profile.get("name");
+            //this.image = new BufferedImage((String)profile.get("image"));
+            this.intro = (String) profile.get("intro");
+
+        }
+        catch (FileNotFoundException|ParseException e){ e.printStackTrace(); }
+    }
         /*
         JSONParser parser = new JSONParser();
 
