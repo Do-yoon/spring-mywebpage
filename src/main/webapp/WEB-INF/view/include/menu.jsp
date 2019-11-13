@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<a href="${path}/admin/profile"></a>
+
 <c:choose>
     <c:when test="${sessionScope.userId == null}">
         <a href="${path}/admin/login.do">로그인</a>
@@ -15,6 +15,9 @@
     <c:otherwise>
         ${sessionScope.userId}님이 로그인 중입니다.
     </c:otherwise>
-</c:choose>
-
+</c:choose><br>
+<a href="{path}/admin/category/profile">프로필</a>
+<a href="{path}/admin/category/project">프로젝트</a>
+<a href="{path}/admin/category/career">커리어</a>
+<a href="{path}/admin/category/trivia">트리비아</a>
 <hr>
