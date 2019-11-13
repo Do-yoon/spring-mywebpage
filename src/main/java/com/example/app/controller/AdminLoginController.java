@@ -20,7 +20,7 @@ public class AdminLoginController {
 
     @RequestMapping("")
     public String login(){
-        return "/admin/login"; // view/admin/login.jsp로 포워딩
+        return "login/login"; // view/login/login.jsp로 포워딩
     }
 
     @RequestMapping("/loginCheck.do")
