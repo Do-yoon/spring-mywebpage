@@ -18,8 +18,7 @@ public class AdminMenuController {
 
     private static final Logger logger = Logger.getGlobal();
 
-    // to do: AdminMenuService 만들고, mapper에서 DB Update query문을 수행한다.
-    // to do: AdminLoginMapper의 Mapper.xml 필요
+    // to do: project와 career의 put method와 post method의 분리 필요
     private AdminMenuService adminMenuService;
 
     @RequestMapping(value = "/update/profile", method = {RequestMethod.PUT, RequestMethod.PATCH})
