@@ -17,18 +17,20 @@
           var startDate = $("#startDate").val();
           var quitDate = $("#quitDate").val();
           var intro = $("#intro").val();
-          if(id = "" || intro == ""){
+          if(id == "" || startDate == "" || quitDate == "" ||intro == ""){
             alert("빈칸은 다 채웠니...? 확인해보렴");
             return;
           }
-          document.careerForm.action = "{path}/admin/loginCheck.do";
+          document.careerForm.action = "{path}/admin/category/update/career";
           document.careerForm.submit();
         })
       })
     </script>
 </head>
 <body>
+    <%@ include file="../include/menu.jsp"%>
     <h2>커리어</h2>
+    <!--c-if-->
     <form name="careerForm" method="post">
       <label for="company">회사</label>
       <input type="text" name="company" id = "company"><br>

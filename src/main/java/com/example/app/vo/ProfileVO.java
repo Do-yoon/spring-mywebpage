@@ -21,6 +21,7 @@ public class ProfileVO {
     // private BufferedImage image;
     // http://도메인/api/images/1 과 같은 형식으로 요청
     private String intro;
+    // private String[] sns;
 
 
     public String getName() {
