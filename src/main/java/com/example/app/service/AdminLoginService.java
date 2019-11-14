@@ -23,7 +23,7 @@ public class AdminLoginService {
     }
 
     public AdminVO viewAdmin(AdminVO admin){
-        return adminLoginDao.viewAdmin(admin);
+        return adminLoginDao.viewAdmin();
     }
 
     public void logout(HttpSession session){
