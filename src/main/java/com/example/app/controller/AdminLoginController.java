@@ -3,6 +3,7 @@ package com.example.app.controller;
 import com.example.app.service.AdminLoginService;
 import com.example.app.vo.AdminVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 

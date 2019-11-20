@@ -5,8 +5,10 @@ import com.example.app.vo.CareerVO;
 import com.example.app.vo.ProfileVO;
 import com.example.app.vo.ProjectVO;
 import com.example.app.vo.TriviaVO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +21,7 @@ public class AdminMenuController {
     private static final Logger logger = Logger.getGlobal();
 
     // to do: project와 career의 put method와 post method의 분리 필요
+    @Autowired
     private AdminMenuService adminMenuService;
 
     @RequestMapping(value = "/profile", method = {RequestMethod.PUT}) //patch 사용하지 않음

@@ -9,12 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.inject.Inject;
+
 @Service
 @Transactional
 public class AdminMenuService {
 
     @Autowired
-    AdminMenuMapper adminMenuMapper;
+    private AdminMenuMapper adminMenuMapper;
 
     public void updateProfile(ProfileVO profileVO) {
         adminMenuMapper.updateProfile(profileVO);

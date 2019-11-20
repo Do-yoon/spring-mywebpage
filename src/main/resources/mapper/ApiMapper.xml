@@ -21,7 +21,7 @@
         FROM career
         ORDER BY id DESC
     </select>
-    <!-- to do: 접었다 폈다 할 수 있도록 처음부터 전부 선택하게 하지 말 것 -->
+
     <select id="selectCareer" resultType="com.example.app.vo.CareerVO">
         SELECT *
         FROM career
@@ -43,4 +43,5 @@
             AND id = #{id}
         </if>
     </select>
+    <!-- to do: 접었다 폈다 할 수 있도록 처음부터 전부 선택하게 하지 말 것 -->
 </mapper>

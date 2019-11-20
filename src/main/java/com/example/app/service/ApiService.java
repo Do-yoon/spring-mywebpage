@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.inject.Inject;
 import java.util.List;
 
 @Service
@@ -14,7 +15,7 @@ import java.util.List;
 public class ApiService {
 
     @Autowired
-    ApiMapper apiMapper;
+    private ApiMapper apiMapper;
 
     public List<CareerVO> selectCareerList() {
         return apiMapper.selectCareerList();
