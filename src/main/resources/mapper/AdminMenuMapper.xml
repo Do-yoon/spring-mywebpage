@@ -19,13 +19,14 @@
     <!-- 커리어 항목 수정 -->
     <select id="updateCareer" resultType="com.example.app.vo.CareerVO">
         UPDATE career
-        <!-- 여러 속성 수정 -->
-        SET company = #{company}
+        SET company = #{company}, term_start = #{date1}, term_end = #{date2}, intro = #{introduction}
         WHERE id = #{id}
     </select>
     <!-- 프로젝트 항목 수정 -->
     <select id="updateProject" resultType="com.example.app.vo.ProjectVO">
-        <!-- 내용 입력 -->
+        UPDATE project
+        SET name = #{name}, term_start = #{date1}, term_end = #{date2}, intro = #{introduction}
+        WHERE id = #{id}
     </select>
     <delete id="deleteCareer">
         DELETE FROM career
