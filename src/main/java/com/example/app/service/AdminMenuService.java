@@ -34,4 +34,10 @@ public class AdminMenuService {
     public void deleteCareer(Integer id) {
         adminMenuMapper.deleteCareer(id);
     }
+    public void insertProject(ProjectVO projectVO) {
+        adminMenuMapper.insertProject(projectVO);
+    }
+    public void insertCareer(CareerVO careerVO) {
+        adminMenuMapper.insertCareer(careerVO);
+    }
 }

@@ -26,8 +26,8 @@
         SELECT *
         FROM career
         WHERE 1 == 1
-        <if test='number != null'>
-          AND 'number' = #{number}
+        <if test='id != null'>
+          AND id = #{id}
         </if>
     </select>
     <select id="selectProjectList" resultType="com.example.app.vo.ProjectVO">
@@ -37,10 +37,10 @@
     </select>
     <select id="selectProject" resultType="com.example.app.vo.ProjectVO">
         SELECT *
-        FROM 'career'
+        FROM project
         WHERE 1 == 1
         <if test='number != null'>
-            AND 'number' = #{number}
+            AND id = #{id}
         </if>
     </select>
 </mapper>

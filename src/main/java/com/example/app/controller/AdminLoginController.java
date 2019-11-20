@@ -20,7 +20,7 @@ public class AdminLoginController {
 
     @RequestMapping("")
     public String login(){
-        return "login/login"; // view/login/login.jsp로 포워딩
+        return "admin/login/login"; // view/admin/login/login.jsp로 포워딩
     }
 
     @RequestMapping("/loginCheck.do")
@@ -31,7 +31,7 @@ public class AdminLoginController {
             mav.setViewName("profile");
             mav.addObject("msg", "success");
         } else {
-            mav.setViewName("admin/login");
+            mav.setViewName("admin/login/login");
             mav.addObject("msg", "failure");
         }
         return mav;
@@ -41,7 +41,7 @@ public class AdminLoginController {
     public ModelAndView logout(HttpSession session){
         adminLoginService.logout(session);
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("admin/login");
+        mav.setViewName("admin/login/login");
         return mav;
     }
 
