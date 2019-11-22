@@ -1,9 +1,11 @@
 package com.example.app.dao;
 
 import com.example.app.vo.AdminVO;
+import org.springframework.stereotype.Repository;
 
 import java.io.*;
 
+@Repository
 public class AdminLoginDAO {
     public boolean loginCheck(AdminVO admin){
         // to do: account encryption

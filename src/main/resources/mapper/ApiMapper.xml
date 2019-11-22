@@ -21,13 +21,13 @@
         FROM career
         ORDER BY id DESC
     </select>
-    <!-- to do: 접었다 폈다 할 수 있도록 처음부터 전부 선택하게 하지 말 것 -->
+
     <select id="selectCareer" resultType="com.example.app.vo.CareerVO">
         SELECT *
         FROM career
         WHERE 1 == 1
-        <if test='number != null'>
-          AND 'number' = #{number}
+        <if test='id != null'>
+          AND id = #{id}
         </if>
     </select>
     <select id="selectProjectList" resultType="com.example.app.vo.ProjectVO">
@@ -37,10 +37,11 @@
     </select>
     <select id="selectProject" resultType="com.example.app.vo.ProjectVO">
         SELECT *
-        FROM 'career'
+        FROM project
         WHERE 1 == 1
         <if test='number != null'>
-            AND 'number' = #{number}
+            AND id = #{id}
         </if>
     </select>
+    <!-- to do: 접었다 폈다 할 수 있도록 처음부터 전부 선택하게 하지 말 것 -->
 </mapper>

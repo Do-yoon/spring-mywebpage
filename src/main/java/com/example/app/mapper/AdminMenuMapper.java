@@ -4,14 +4,16 @@ import com.example.app.vo.CareerVO;
 import com.example.app.vo.ProfileVO;
 import com.example.app.vo.ProjectVO;
 import com.example.app.vo.TriviaVO;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface AdminMenuMapper {
-    public void updateProfile(ProfileVO profileVO);
-    public void updateProject(ProjectVO projectVO);
-    public void updateTrivia(TriviaVO triviaVO);
-    public void updateCareer(CareerVO careerVO);
-    public void deleteProject(Integer id);
-    public void deleteCareer(Integer id);
-    public void insertProject(ProjectVO projectVO);
-    public void insertCareer(CareerVO careerVO);
+    void updateProfile(ProfileVO profileVO);
+    void updateProject(ProjectVO projectVO);
+    void updateTrivia(TriviaVO triviaVO);
+    void updateCareer(CareerVO careerVO);
+    void deleteProject(Integer id);
+    void deleteCareer(Integer id);
+    void insertProject(ProjectVO projectVO);
+    void insertCareer(CareerVO careerVO);
 }
