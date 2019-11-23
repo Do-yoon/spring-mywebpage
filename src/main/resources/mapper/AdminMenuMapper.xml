@@ -16,13 +16,13 @@
         <result column="term_end" property="date2"></result>
         <result column="introduction" property="intro"></result>
     </resultMap>
-    <!-- 커리어 항목 수정 -->
+    <!-- 커리어 항목 수정-->
     <select id="updateCareer" resultType="com.example.app.vo.CareerVO">
         UPDATE career
         SET company = #{company}, term_start = #{date1}, term_end = #{date2}, intro = #{introduction}
         WHERE id = #{id}
     </select>
-    <!-- 프로젝트 항목 수정 -->
+    <!--프로젝트 항목 수정-->
     <select id="updateProject" resultType="com.example.app.vo.ProjectVO">
         UPDATE project
         SET name = #{name}, term_start = #{date1}, term_end = #{date2}, intro = #{introduction}
