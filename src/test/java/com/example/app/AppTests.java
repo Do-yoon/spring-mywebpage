@@ -1,27 +1,42 @@
 package com.example.app;
 
+import com.example.app.controller.AdminMenuController;
 import com.example.app.service.AdminLoginService;
 import com.example.app.service.AdminMenuService;
 import com.example.app.service.ApiService;
 import com.example.app.vo.AdminVO;
 import com.example.app.vo.ProfileVO;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MockMvcBuilder;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionContext;
 import java.util.Enumeration;
 
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class AppTests {
-	private AdminLoginService adminLoginService;
-	private AdminMenuService adminMenuService;
-	private ApiService apiService;
+
+	private MockMvc mockMvc;
+
+	@MockBean
+	private AdminMenuController adminMenuController;
+
+	@Before
+	public void setup() {
+		mockMvc = MockMvcBuilders.standaloneSetup(adminMenuController).build();
+	}
 
 /*	@Test
 	public void apiServiceTest() {
@@ -29,9 +44,8 @@ public class AppTests {
 	}*/
 
 	@Test
-	public void adminMenuServiceTest() {
-		ProfileVO profileVO = new ProfileVO();
-		adminMenuService.updateProfile(profileVO);
+	public void adminMenuServiceTest() throws Exception {
+//		given()
 	}
 
 /*	@Test
