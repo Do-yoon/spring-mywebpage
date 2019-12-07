@@ -18,14 +18,8 @@ public class AdminMenuService {
     @Autowired
     private AdminMenuMapper adminMenuMapper;
 
-    public void updateProfile(ProfileVO profileVO) {
-        adminMenuMapper.updateProfile(profileVO);
-    }
     public void updateProject(ProjectVO projectVO) {
         adminMenuMapper.updateProject(projectVO);
-    }
-    public void updateTrivia(TriviaVO triviaVO) {
-        adminMenuMapper.updateTrivia(triviaVO);
     }
     public void updateCareer(CareerVO careerVO) {
         adminMenuMapper.updateCareer(careerVO);

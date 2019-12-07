@@ -5,6 +5,8 @@ import com.example.app.vo.CareerVO;
 import com.example.app.vo.ProfileVO;
 import com.example.app.vo.ProjectVO;
 import com.example.app.vo.TriviaVO;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +17,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.logging.Logger;
 
 @Controller
+@Component
 @RequestMapping("/admin/category")
 public class AdminMenuController {
 
-    private static final Logger logger = Logger.getGlobal();
+    // private static final Logger logger = Logger.getGlobal();
 
     // to do: project와 career의 put method와 post method의 분리 필요
     @Autowired
@@ -28,7 +31,11 @@ public class AdminMenuController {
     public ResponseEntity<?> updateProfile(@RequestBody ProfileVO profileVO){
         ResponseEntity<String> entity = null;
         try {
-            adminMenuService.updateProfile(profileVO);
+            JSONObject jsonObject = new JSONObject();
+            JSONObject newProfile = new JSONObject();
+
+            newProfile.put("name", profileVO.getName());
+            newProfile.put("intro", profileVO.getIntro());
             entity = new ResponseEntity<String>("success", HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
@@ -70,7 +77,11 @@ public class AdminMenuController {
     public ResponseEntity<?> updateTrivia(@RequestBody TriviaVO triviaVO){
         ResponseEntity<String> entity = null;
         try {
-            adminMenuService.updateTrivia(triviaVO);
+            JSONObject jsonObject = new JSONObject();
+            JSONObject newProfile = new JSONObject();
+
+            // newProfile.put("name", triviaVO.getInfo());
+
             entity = new ResponseEntity<String>("success", HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();

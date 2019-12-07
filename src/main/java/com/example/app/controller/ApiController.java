@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
+@Component
 @RequestMapping("/api")
 public class ApiController {
 
