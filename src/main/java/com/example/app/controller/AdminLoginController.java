@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.util.logging.Logger;
 
 @RestController
+@Component
 @RequestMapping("/admin")
 public class AdminLoginController {
     //String res = ""; // mybatis configuration file path

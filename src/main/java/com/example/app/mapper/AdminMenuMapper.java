@@ -8,9 +8,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AdminMenuMapper {
-    void updateProfile(ProfileVO profileVO);
+    // void updateProfile(ProfileVO profileVO);
     void updateProject(ProjectVO projectVO);
-    void updateTrivia(TriviaVO triviaVO);
+    // void updateTrivia(TriviaVO triviaVO);
     void updateCareer(CareerVO careerVO);
     void deleteProject(Integer id);
     void deleteCareer(Integer id);
