@@ -22,6 +22,8 @@
     <beans:bean id="AdminMenuService" class="com.example.app.service.AdminMenuService"/>
     <beans:bean id="ApiService" class="com.example.app.service.ApiService"/>
 
-    <context:component-scan base-package="com.example.app" />
+    <context:component-scan base-package="com.example.app" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
 
 </beans:beans>

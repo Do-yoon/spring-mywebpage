@@ -25,9 +25,11 @@
     <h2>프로젝트</h2>
     <form name="projectForm" method="post">
       <label for="startDate" id="startDate">시작일</label>
-      <input type="datetime-local"/><br>
+      <!--input type="datetime-local"/><br-->
+      <input type="text" name="startDate" id="startDate"><br>
       <label for="endDate" id="endDate">마감일</label>
-      <input type="datetime-local"/><br>
+      <!--input type="datetime-local"/><br-->
+      <input type="text" name="endDate" id="endDate"><br>
       <label for="intro">소개</label>
       <input type="text"><br>
       <button type="button" id="inputProject">입력</button>
