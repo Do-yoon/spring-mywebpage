@@ -9,4 +9,13 @@
     <context:component-scan base-package="com.example.app">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
+    <beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <beans:property name="dataSource" ref="dataSource"></beans:property>
+        <beans:property name="configLocation" value="classpath:/resource/mybatis-config.xml"></beans:property>
+    </beans:bean>
+
+    <beans:bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <beans:constructor-arg ref="sqlSessionFactory"></beans:constructor-arg>
+    </beans:bean>
+
 </beans:beans>

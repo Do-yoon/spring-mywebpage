@@ -3,9 +3,12 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xmlns:beans="http://www.springframework.org/schema/beans"
              xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
              xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+            http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+
     <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 
     <!-- Enables the Spring MVC @Controller programming model -->
@@ -25,5 +28,18 @@
     <context:component-scan base-package="com.example.app" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
+
+    <mybatis:scan base-package="com.example.app.mapper" />
+
+    <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <beans:property name="driver" value="${driver}"/>
+        <beans:property name="url" value="${url}"/>
+        <beans:property name="username" value="${username}"/>
+        <beans:property name="password" value="${password}"/>
+        <!--beans:property name="driverClassName" value="#{db['jdbc.driver']}" />
+        <beans:property name="url" value="#{db['jdbc.url']}" />
+        <beans:property name="username" value="#{db['jdbc.username']}"  />
+        <beans:property name="password" value="#{db['jdbc.password']}"  /-->
+    </beans:bean>
 
 </beans:beans>
