@@ -22,7 +22,7 @@
             return;
           }
           document.careerForm.action = "{path}/admin/category/update/career";
-          document.careerForm.submit();
+          document.careerForm.submit();wqqqQQQQ
         })
       })
     </script>
@@ -30,14 +30,16 @@
 <body>
     <%@ include file="../include/menu.jsp"%>
     <h2>커리어</h2>
-    <!--c-if-->
+    <!--c-if-->QQ
     <form name="careerForm" method="post">
       <label for="company">회사</label>
       <input type="text" name="company" id = "company"><br>
       <label for="startDate" id="startDate">입사일</label>
-      <input type="datetime-local"/><br>
+      <!--input type="datetime-local"/><br-->
+      <input type="text" name="startDate" id="startDate"><br>
       <label for="quitDate" id="quitDate">퇴사일</label>
-      <input type="datetime-local"/><br>
+      <!--input type="datetime-local"/><br-->
+      <input type="text" name="quitDate" id="quitDate"><br>
       <label for="intro">소개</label>
       <input type="text"><br>
       <button type="button" id="inputCareer">입력</button>

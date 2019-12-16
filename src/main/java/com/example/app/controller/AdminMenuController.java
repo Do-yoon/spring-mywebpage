@@ -28,7 +28,7 @@ public class AdminMenuController {
     private AdminMenuService adminMenuService;
 
     @RequestMapping(value = "/profile", method = {RequestMethod.PUT}) //patch 사용하지 않음
-    public ResponseEntity<?> updateProfile(@RequestBody ProfileVO profileVO){
+    public ResponseEntity<?> updateProfile(ProfileVO profileVO){
         ResponseEntity<String> entity = null;
         try {
             JSONObject jsonObject = new JSONObject();
@@ -74,7 +74,7 @@ public class AdminMenuController {
     
 
     @RequestMapping(value = "/trivia", method = {RequestMethod.PUT})
-    public ResponseEntity<?> updateTrivia(@RequestBody TriviaVO triviaVO){
+    public ResponseEntity<?> updateTrivia(TriviaVO triviaVO){
         ResponseEntity<String> entity = null;
         try {
             JSONObject jsonObject = new JSONObject();

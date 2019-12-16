@@ -1,9 +1,6 @@
 package com.example.app;
 
 import com.example.app.controller.AdminMenuController;
-import com.example.app.service.AdminLoginService;
-import com.example.app.service.AdminMenuService;
-import com.example.app.service.ApiService;
 import com.example.app.vo.AdminVO;
 import com.example.app.vo.ProfileVO;
 import org.junit.Before;
@@ -15,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -29,6 +27,7 @@ import java.util.Enumeration;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = App.class)
+@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring/**/*.xml"})
 @Transactional
 // @Ignore
 public class AppTests {
