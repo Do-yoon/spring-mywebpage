@@ -1,40 +1,26 @@
 package com.example.app.vo;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Map;
 
 
 // vo for setting Profile
 @Data
+@Getter
 public class ProfileVO {
-
     private String name;
-    // private BufferedImage image;
-    // http://도메인/api/images/1 과 같은 형식으로 요청
+    private String image;
     private String intro;
-    // private String[] sns;
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getIntro() {
-        return intro;
-    }
-
-    public void setIntro(String intro) {
-        this.intro = intro;
-    }
+    private Map<String, String> sns; // key: platform, Value: page link
 
     public ProfileVO() {
         try {
@@ -42,21 +28,10 @@ public class ProfileVO {
             JSONParser jsonParser = new JSONParser();
             JSONObject profile = (JSONObject) jsonParser.parse(fr.toString());
             this.name = (String) profile.get("name");
-            //this.image = new BufferedImage((String)profile.get("image"));
             this.intro = (String) profile.get("intro");
-
+            this.image = (String) profile.get("image");
+            this.sns = (HashMap) profile.get("sns");
         }
         catch (FileNotFoundException|ParseException e){ e.printStackTrace(); }
     }
-        /*
-        JSONParser parser = new JSONParser();
-
-        try {
-            Object obj = parser.parse(new FileReader("data/profile.json"));
-            JSONObject jsonObject = (JSONObject) obj;
-            this.name = (String) jsonObject.get("name")
-        } catch (FileNotFoundException e){ e.printStackTrace(); }
-        catch (IOException e) { e.printStackTrace(); }
-        catch (ParseException e) { e.printStackTrace(); }
-        */
 }

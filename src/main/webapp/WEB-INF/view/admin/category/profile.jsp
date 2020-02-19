@@ -24,7 +24,7 @@
     <h2>프로필</h2>
     <form name="profileForm" method="put">
       <label for="name">이름</label>
-      <input type="text" name="myname"" id = "myname" onfocus="this.value=prev_myname"><br>
+      <input type="text" name="myname" id = "myname" onfocus="this.value=prev_myname"><br>
       <!--label for="profilePic">프로필 사진</label>
       <input type="file" value="profilePic" id = "profilePic"><br-->
       <label for="intro">소개</label>

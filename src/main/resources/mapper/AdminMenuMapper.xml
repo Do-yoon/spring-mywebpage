@@ -17,31 +17,5 @@
         <result column="introduction" property="intro"></result>
     </resultMap>
     <!-- 커리어 항목 수정-->
-    <select id="updateCareer" resultType="com.example.app.vo.CareerVO">
-        UPDATE career
-        SET company = #{company}, term_start = #{date1}, term_end = #{date2}, intro = #{introduction}
-        WHERE id = #{id}
-    </select>
-    <!--프로젝트 항목 수정-->
-    <select id="updateProject" resultType="com.example.app.vo.ProjectVO">
-        UPDATE project
-        SET name = #{name}, term_start = #{date1}, term_end = #{date2}, intro = #{introduction}
-        WHERE id = #{id}
-    </select>
-    <delete id="deleteCareer" parameterType="com.example.app.vo.CareerVO">
-        DELETE FROM career
-        WHERE id = ${id}
-    </delete>
-    <delete id="deleteProject" parameterType="com.example.app.vo.ProjectVO">
-        DELETE FROM project
-        WHERE id = ${id}
-    </delete>
-    <insert id="insertCareer" parameterType="com.example.app.vo.CareerVO">
-        INSERT INTO career (id, company, term_start, term_end, introduction)
-        VALUES (career_seq.NEXTVAL, #{id}, #{company}, #{term_start}, #{term_end}, introduction)
-    </insert>
-    <insert id="insertProject" parameterType="com.example.app.vo.ProjectVO">
-        INSERT INTO project (id, name, term_start, term_end, introduction)
-        VALUES (career_seq.NEXTVAL, #{id}, #{name}, #{term_start}, #{term_end}, introduction)
-    </insert>
+
 </mapper>
