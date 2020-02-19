@@ -16,6 +16,7 @@
         <result column="term_end" property="date2"></result>
         <result column="introduction" property="intro"></result>
     </resultMap>
+    <!-- to do: 접었다 폈다 할 수 있도록 처음부터 전부 선택하게 하지 말 것 -->
     <select id="selectCareerList" resultType="com.example.app.vo.CareerVO">
         SELECT *
         FROM career
@@ -30,11 +31,29 @@
           AND id = #{id}
         </if>
     </select>
+
+    <select id="updateCareer" resultType="com.example.app.vo.CareerVO">
+        UPDATE career
+        SET company = #{company}, term_start = #{date1}, term_end = #{date2}, intro = #{introduction}
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insertCareer" parameterType="com.example.app.vo.CareerVO">
+        INSERT INTO career (id, company, term_start, term_end, introduction)
+        VALUES (career_seq.NEXTVAL, #{id}, #{company}, #{term_start}, #{term_end}, introduction)
+    </insert>
+
+    <delete id="deleteCareer" parameterType="com.example.app.vo.CareerVO">
+        DELETE FROM career
+        WHERE id = ${id}
+    </delete>
+
     <select id="selectProjectList" resultType="com.example.app.vo.ProjectVO">
         SELECT *
         FROM project
         ORDER BY id DESC
     </select>
+
     <select id="selectProject" resultType="com.example.app.vo.ProjectVO">
         SELECT *
         FROM project
@@ -43,5 +62,21 @@
             AND id = #{id}
         </if>
     </select>
-    <!-- to do: 접었다 폈다 할 수 있도록 처음부터 전부 선택하게 하지 말 것 -->
+
+    <select id="updateProject" resultType="com.example.app.vo.ProjectVO">
+        UPDATE project
+        SET name = #{name}, term_start = #{date1}, term_end = #{date2}, intro = #{introduction}
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insertProject" parameterType="com.example.app.vo.ProjectVO">
+        INSERT INTO project (id, name, term_start, term_end, introduction)
+        VALUES (career_seq.NEXTVAL, #{id}, #{name}, #{term_start}, #{term_end}, introduction)
+    </insert>
+
+    <delete id="deleteProject" parameterType="com.example.app.vo.ProjectVO">
+        DELETE FROM project
+        WHERE id = ${id}
+    </delete>
+
 </mapper>

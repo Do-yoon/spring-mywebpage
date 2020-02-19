@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 @Component
 @RequestMapping("/admin")
 public class AdminLoginController {
+    /*
     //String res = ""; // mybatis configuration file path
     private static final Logger logger = Logger.getGlobal();
 
@@ -46,6 +47,6 @@ public class AdminLoginController {
         mav.setViewName("admin/login/login");
         return mav;
     }
-
+*/
 
 }
